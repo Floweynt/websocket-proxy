@@ -97,10 +97,10 @@ void protocol_client::start(const std::string& uri)
     ws_socket.clear_access_channels(websocketpp::log::alevel::frame_header);
     ws_socket.clear_access_channels(websocketpp::log::alevel::frame_payload);
 
-    asio::error_code errc;
+    websocketpp::lib::error_code errc;
     auto con = ws_socket.get_connection(uri, errc);
 
-    if (errc.failed())
+    if (errc)
     {
         fatal("client", fmt::format("failed to open websocket to host '{}': {}'", uri, errc.message()));
     }
@@ -111,9 +111,9 @@ void protocol_client::start(const std::string& uri)
 
 void protocol_client::close()
 {
-    asio::error_code errc;
+    websocketpp::lib::error_code errc;
     ws_socket.close(connection, websocketpp::close::status::normal, "channel closed do to client stopping", errc);
-    if (errc.failed())
+    if (errc)
     {
         error("proxy_client", fmt::format("failed to close client: {}", errc.message()));
     }
