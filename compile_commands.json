@@ -1,0 +1,14 @@
+[
+  {
+    "directory": "/home/flowey/dev/cpp/websocket-proxy/build",
+    "command": "ccache c++ -Iproxy-client.p -I. -I.. -I../include -I../deps/argparse/include -I../deps/magic_enum/include -I/usr/local/include -fdiagnostics-color=always -fsanitize=address -fno-omit-frame-pointer -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -O0 -g -MD -MQ proxy-client.p/src_client.cpp.o -MF proxy-client.p/src_client.cpp.o.d -o proxy-client.p/src_client.cpp.o -c ../src/client.cpp",
+    "file": "../src/client.cpp",
+    "output": "proxy-client.p/src_client.cpp.o"
+  },
+  {
+    "directory": "/home/flowey/dev/cpp/websocket-proxy/build",
+    "command": "ccache c++ -Iproxy-server.p -I. -I.. -I../include -I../deps/argparse/include -I../deps/magic_enum/include -I/usr/local/include -fdiagnostics-color=always -fsanitize=address -fno-omit-frame-pointer -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++20 -O0 -g -MD -MQ proxy-server.p/src_server.cpp.o -MF proxy-server.p/src_server.cpp.o.d -o proxy-server.p/src_server.cpp.o -c ../src/server.cpp",
+    "file": "../src/server.cpp",
+    "output": "proxy-server.p/src_server.cpp.o"
+  }
+]
